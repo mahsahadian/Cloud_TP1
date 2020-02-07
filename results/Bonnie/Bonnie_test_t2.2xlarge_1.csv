@@ -1,0 +1,17 @@
+Bonnie_test_,t2.2xlarge_1:
+Machine,Size,K/sec,%CP,K/sec,%CP,K/sec,%CP,K/sec,%CP,K/sec,%CP,/sec,%CP
+ip-172-31-41-,3300M,603,99,116715,10,118466,9,1375,99,2593981,100,5119,36
+Bonnie_test_,t2.2xlarge_2:
+Machine,Size,K/sec,%CP,K/sec,%CP,K/sec,%CP,K/sec,%CP,K/sec,%CP,/sec,%CP
+ip-172-31-41-,3300M,600,99,116856,10,115435,8,1374,99,2605895,100,5059,35
+Bonnie_test_,t2.2xlarge_3:
+Machine,Size,K/sec,%CP,K/sec,%CP,K/sec,%CP,K/sec,%CP,K/sec,%CP,/sec,%CP
+ip-172-31-41-,3300M,604,99,116243,10,119321,9,1374,99,2611114,100,5417,35
+Bonnie_test_,t2.2xlarge_4:
+Machine,Size,K/sec,%CP,K/sec,%CP,K/sec,%CP,K/sec,%CP,K/sec,%CP,/sec,%CP
+ip-172-31-41-,3300M,602,99,115058,10,119363,9,1371,99,2637177,100,5079,34
+Bonnie_test_,t2.2xlarge_5:
+Machine,Size,K/sec,%CP,K/sec,%CP,K/sec,%CP,K/sec,%CP,K/sec,%CP,/sec,%CP
+ip-172-31-41-,3300M,603,99,114162,10,119275,9,1367,99,2613089,100,5209,35
+
+
