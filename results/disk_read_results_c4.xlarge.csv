@@ -1,0 +1,6 @@
+instance,benchmarkNumber,DiskPartition,cachedReadingSpeed,regularReadingSpeed
+c4.xlarge,1,xvda,10685.58,119.13
+c4.xlarge,2,xvda,10818.56,119.13
+c4.xlarge,3,xvda,10873.34,119.14
+c4.xlarge,4,xvda,10797.01,119.14
+c4.xlarge,5,xvda,10856.04,119.13

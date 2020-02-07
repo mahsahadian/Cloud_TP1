@@ -1,0 +1,6 @@
+instance,benchmarkNumber,DiskPartition,cachedReadingSpeed,regularReadingSpeed
+m5.xlarge,1,nvme0n1,9024.77,170.61
+m5.xlarge,2,nvme0n1,9169.32,170.61
+m5.xlarge,3,nvme0n1,9193.76,170.61
+m5.xlarge,4,nvme0n1,9119.60,170.61
+m5.xlarge,5,nvme0n1,8737.25,170.61
