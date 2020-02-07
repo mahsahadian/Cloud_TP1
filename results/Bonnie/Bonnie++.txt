@@ -1,1 +1,3 @@
 
+Results for Bonnie++ tests
+Warmed up the machines and repeated the tests 5 times on each instance
