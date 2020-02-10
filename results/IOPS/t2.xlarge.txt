@@ -1,0 +1,94 @@
+ubuntu@ip-172-31-26-231:~$ iozone -R -az -b iozone.xls -g 4.5G -i 0 -i 1 -i 2 -I -n 512m -p -q 1024 -O
+	Iozone: Performance Test of File I/O
+	        Version $Revision: 3.429 $
+		Compiled for 64 bit mode.
+		Build: linux-AMD64 
+
+	Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins
+	             Al Slater, Scott Rhine, Mike Wisner, Ken Goss
+	             Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,
+	             Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,
+	             Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy, Dave Boone,
+	             Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root,
+	             Fabrice Bacchella, Zhenghua Xue, Qin Li, Darren Sawyer,
+	             Vangel Bojaxhi, Ben England, Vikentsi Lapa.
+
+	Run began: Sun Feb  9 21:51:14 2020
+
+	Excel chart generation enabled
+	Auto Mode
+	Cross over of record size disabled.
+	Using maximum file size of 4194304 kilobytes.
+	O_DIRECT feature enabled
+	Using minimum file size of 524288 kilobytes.
+	Purge Mode On
+	Using Maximum Record Size 1024 kB
+	OPS Mode. Output is in operations per second.
+	Command line used: iozone -R -az -b iozone.xls -g 4.5G -i 0 -i 1 -i 2 -I -n 512m -p -q 1024 -O
+	Time Resolution = 0.000001 seconds.
+	Processor cache size set to 1024 kBytes.
+	Processor cache line size set to 32 bytes.
+	File stride size set to 17 * record size.
+                                                              random    random     bkwd    record    stride                                    
+              kB  reclen    write  rewrite    read    reread    read     write     read   rewrite      read   fwrite frewrite    fread  freread
+          524288       4     1757     1849     2259     2681     3060     1845                                                          
+          524288       8     1635     1668     3209     3061     3060     1644                                                          
+          524288      16     1397     1379     3375     3062     3059     1321                                                          
+          524288      32     1151     1140     2821     2837     2807     1155                                                          
+          524288      64      880      929     2258     2190     1955      763                                                          
+          524288     128      596      538     1284      980      977      728                                                          
+          524288     256      571      538      607      506      494      516                                                          
+          524288     512      288      241      290      261      248      275                                                          
+          524288    1024      131      130      131      130      130      130                                                          
+         1048576       4     1831     1860     2265     2247     2612     1861                                                          
+         1048576       8     1733     1765     3133     3060     3060     1759                                                          
+         1048576      16     1503     1492     3209     3033     3088     1447                                                          
+         1048576      32     1240     1255     2795     2750     2792     1202                                                          
+         1048576      64     1050     1050     2220     1957     1955      991                                                          
+         1048576     128      708      711     1110      978      977      686                                                          
+         1048576     256      554      487      555      489      488      521                                                          
+         1048576     512      253      244      277      244      244      277                                                          
+         1048576    1024      122      122      138      122      122      138                                                          
+         2097152       4     1794     1824      150       99^C
+iozone: interrupted
+
+Excel output is below:
+
+"Writer report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   1757  1635  1397  1151  880  596  571  288  131 
+"1048576"   1831  1733  1503  1240  1050  708  554  253  122 
+"2097152"   1794 
+
+"Re-writer report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   1849  1668  1379  1140  929  538  538  241  130 
+"1048576"   1860  1765  1492  1255  1050  711  487  244  122 
+"2097152"   1824 
+
+"Reader report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   2259  3209  3375  2821  2258  1284  607  290  131 
+"1048576"   2265  3133  3209  2795  2220  1110  555  277  138 
+"2097152"   150 
+
+"Re-Reader report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   2681  3061  3062  2837  2190  980  506  261  130 
+"1048576"   2247  3060  3033  2750  1957  978  489  244  122 
+"2097152"   99 
+
+"Random read report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   3060  3060  3059  2807  1955  977  494  248  130 
+"1048576"   2612  3060  3088  2792  1955  977  488  244  122 
+"2097152"   0 
+
+"Random write report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   1845  1644  1321  1155  763  728  516  275  130 
+"1048576"   1861  1759  1447  1202  991  686  521  277  138 
+"2097152"   0 
+exiting iozone
+
+

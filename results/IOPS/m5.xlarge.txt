@@ -1,0 +1,93 @@
+ubuntu@ip-172-31-14-190:~$ iozone -R -az -b iozone.xls -g 4.5G -i 0 -i 1 -i 2 -I -n 512m -p -q 1024 -O
+	Iozone: Performance Test of File I/O
+	        Version $Revision: 3.429 $
+		Compiled for 64 bit mode.
+		Build: linux-AMD64 
+
+	Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins
+	             Al Slater, Scott Rhine, Mike Wisner, Ken Goss
+	             Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,
+	             Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,
+	             Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy, Dave Boone,
+	             Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root,
+	             Fabrice Bacchella, Zhenghua Xue, Qin Li, Darren Sawyer,
+	             Vangel Bojaxhi, Ben England, Vikentsi Lapa.
+
+	Run began: Sun Feb  9 21:32:18 2020
+
+	Excel chart generation enabled
+	Auto Mode
+	Cross over of record size disabled.
+	Using maximum file size of 4194304 kilobytes.
+	O_DIRECT feature enabled
+	Using minimum file size of 524288 kilobytes.
+	Purge Mode On
+	Using Maximum Record Size 1024 kB
+	OPS Mode. Output is in operations per second.
+	Command line used: iozone -R -az -b iozone.xls -g 4.5G -i 0 -i 1 -i 2 -I -n 512m -p -q 1024 -O
+	Time Resolution = 0.000001 seconds.
+	Processor cache size set to 1024 kBytes.
+	Processor cache line size set to 32 bytes.
+	File stride size set to 17 * record size.
+                                                              random    random     bkwd    record    stride                                    
+              kB  reclen    write  rewrite    read    reread    read     write     read   rewrite      read   fwrite frewrite    fread  freread
+          524288       4     1941     1954     3070     3000     3000     2015                                                          
+          524288       8     1965     1974     3143     2999     2998     2073                                                          
+          524288      16     1661     1589     3302     3000     2999     1739                                                          
+          524288      32     1470     1531     4274     4116     3676     1425                                                          
+          524288      64     1201     1165     2733     2050     2050     1137                                                          
+          524288     128      901      878     1366     1025     1025      860                                                          
+          524288     256      570      547      527      512      512      512                                                          
+          524288     512      256      256      256      256      256      254                                                          
+          524288    1024      129      126      129      128      128      127                                                          
+         1048576       4     2130     2108     3034     2999     3000     2143                                                          
+         1048576       8     1933     1977     3070     3000     3000     2020                                                          
+         1048576      16     1662     1691     3140     3000     3000     1733                                                          
+         1048576      32     1566     1613     4191     4306     3307     1503                                                          
+         1048576      64     1215     1228     2343     2050     2050     1254                                                          
+         1048576     128      929      923     1171     1025     1025      939                                                          
+         1048576     256      564      512      512      512      512      512                                                          
+         1048576     512      256      256      256      256      256      256                                                          
+         1048576    1024      128      128      128      128      128      128                                                          
+         2097152       4     1951     2040      105       99^C
+iozone: interrupted
+
+Excel output is below:
+
+"Writer report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   1941  1965  1661  1470  1201  901  570  256  129 
+"1048576"   2130  1933  1662  1566  1215  929  564  256  128 
+"2097152"   1951 
+
+"Re-writer report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   1954  1974  1589  1531  1165  878  547  256  126 
+"1048576"   2108  1977  1691  1613  1228  923  512  256  128 
+"2097152"   2040 
+
+"Reader report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   3070  3143  3302  4274  2733  1366  527  256  129 
+"1048576"   3034  3070  3140  4191  2343  1171  512  256  128 
+"2097152"   105 
+
+"Re-Reader report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   3000  2999  3000  4116  2050  1025  512  256  128 
+"1048576"   2999  3000  3000  4306  2050  1025  512  256  128 
+"2097152"   99 
+
+"Random read report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   3000  2998  2999  3676  2050  1025  512  256  128 
+"1048576"   3000  3000  3000  3307  2050  1025  512  256  128 
+"2097152"   0 
+
+"Random write report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"
+"524288"   2015  2073  1739  1425  1137  860  512  254  127 
+"1048576"   2143  2020  1733  1503  1254  939  512  256  128 
+"2097152"   0 
+exiting iozone
+

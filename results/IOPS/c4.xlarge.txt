@@ -1,0 +1,99 @@
+ubuntu@ip-172-31-29-179:~$ iozone -R -az -g 4.5G -i 0 -i 1 -i 2 -b disk_1 -I -n 512m -O
+	Iozone: Performance Test of File I/O
+	        Version $Revision: 3.429 $
+		Compiled for 64 bit mode.
+		Build: linux-AMD64 
+
+	Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins
+	             Al Slater, Scott Rhine, Mike Wisner, Ken Goss
+	             Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,
+	             Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,
+	             Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy, Dave Boone,
+	             Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root,
+	             Fabrice Bacchella, Zhenghua Xue, Qin Li, Darren Sawyer,
+	             Vangel Bojaxhi, Ben England, Vikentsi Lapa.
+
+	Run began: Sun Feb  9 21:36:43 2020
+
+	Excel chart generation enabled
+	Auto Mode
+	Cross over of record size disabled.
+	Using maximum file size of 4194304 kilobytes.
+	O_DIRECT feature enabled
+	Using minimum file size of 524288 kilobytes.
+	OPS Mode. Output is in operations per second.
+	Command line used: iozone -R -az -g 4.5G -i 0 -i 1 -i 2 -b disk_1 -I -n 512m -O
+	Time Resolution = 0.000001 seconds.
+	Processor cache size set to 1024 kBytes.
+	Processor cache line size set to 32 bytes.
+	File stride size set to 17 * record size.
+                                                              random    random     bkwd    record    stride                                    
+              kB  reclen    write  rewrite    read    reread    read     write     read   rewrite      read   fwrite frewrite    fread  freread
+          524288       4     1343     1431     2296     2420     1374     1385                                                          
+          524288       8     1258     1359     2251     2053     2163     1296                                                          
+          524288      16     1052     1068     1649     1859     1711     1144                                                          
+          524288      32     1010      871     1435     1597     1435     1025                                                          
+          524288      64      766      693     1336     1361     1348      856                                                          
+          524288     128      651      656      816      660      781      485                                                          
+          524288     256      429      354      421      366      357      425                                                          
+          524288     512      181      178      216      178      178      216                                                          
+          524288    1024       89       89      108       89       89      108                                                          
+          524288    2048       44       44       53       44       44       54                                                          
+          524288    4096       22       22       26       22       22       27                                                          
+          524288    8192       11       11       13       11       11       13                                                          
+          524288   16384        5        5        6        5        5        6                                                          
+         1048576       4     1392     1427     1884     1907     1159     1375                                                          
+         1048576       8     1313     1306     1625     1575     1211     1286                                                          
+         1048576      16     1124     1103     1622     1698     1147     1152                                                          
+         1048576      32      998      931     1310     1297     1538      925                                                          
+         1048576      64      829      797     1335     1285     1272      810                                                          
+         1048576     128      564      639      783      703      727      657                                                          
+         1048576     256      391      357      391      357      357      391                                                          
+         1048576     512      179      178      195      176      181      195                                                          
+         1048576    1024       89       89       95       90       89       97                                                          
+         1048576    2048       44       44       48       44       44       48                                                          
+         1048576    4096       22       22       24       22       22       24                                                          
+         1048576    8192       11       11       12       11       11       12                                                          
+         1048576   16384        5        5        6        5        5        6                                                          
+         2097152       4     1372     1374      160       99^C
+iozone: interrupted
+
+Excel output is below:
+
+"Writer report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"  "2048"  "4096"  "8192"  "16384"
+"524288"   1343  1258  1052  1010  766  651  429  181  89  44  22  11  5 
+"1048576"   1392  1313  1124  998  829  564  391  179  89  44  22  11  5 
+"2097152"   1372 
+
+"Re-writer report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"  "2048"  "4096"  "8192"  "16384"
+"524288"   1431  1359  1068  871  693  656  354  178  89  44  22  11  5 
+"1048576"   1427  1306  1103  931  797  639  357  178  89  44  22  11  5 
+"2097152"   1374 
+
+"Reader report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"  "2048"  "4096"  "8192"  "16384"
+"524288"   2296  2251  1649  1435  1336  816  421  216  108  53  26  13  6 
+"1048576"   1884  1625  1622  1310  1335  783  391  195  95  48  24  12  6 
+"2097152"   160 
+
+"Re-Reader report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"  "2048"  "4096"  "8192"  "16384"
+"524288"   2420  2053  1859  1597  1361  660  366  178  89  44  22  11  5 
+"1048576"   1907  1575  1698  1297  1285  703  357  176  90  44  22  11  5 
+"2097152"   99 
+
+"Random read report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"  "2048"  "4096"  "8192"  "16384"
+"524288"   1374  2163  1711  1435  1348  781  357  178  89  44  22  11  5 
+"1048576"   1159  1211  1147  1538  1272  727  357  181  89  44  22  11  5 
+"2097152"   0 
+
+"Random write report"
+        "4"  "8"  "16"  "32"  "64"  "128"  "256"  "512"  "1024"  "2048"  "4096"  "8192"  "16384"
+"524288"   1385  1296  1144  1025  856  485  425  216  108  54  27  13  6 
+"1048576"   1375  1286  1152  925  810  657  391  195  97  48  24  12  6 
+"2097152"   0 
+exiting iozone
+
