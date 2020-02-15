@@ -22,3 +22,9 @@ brk=$(echo $res2 | cut -d ' ' -f 5)
 stack=$(echo $res2 | cut -d ' ' -f 15)
 bigheap=$(echo $res2 | cut -d ' ' -f 25)
 echo $INSTANCE,$brk,$stack,$bigheap >> $RESULTS_FILE_NAME
+
+echo "pushing the result to github"
+git pull
+git add stress-ng_test_results_$INSTANCE.csv
+git commit -m "stress-ng benchmarking results for instance : $INSTANCE"
+git push 
