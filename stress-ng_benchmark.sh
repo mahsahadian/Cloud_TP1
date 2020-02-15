@@ -15,12 +15,11 @@ if [ ! -f $RESULTS_FILE_NAME ]; then
 fi
 
 
-re="$(stress-ng --brk $nStressors --stack $nStressors --bigheap $nStressors --metrics-brief --timeout 120s 2>&1)"
-# The results we want are the value of bogo ops/s  real time
-res2="${res#*] brk }"
-brk=$(echo $res2 | cut -d ' ' -f 5)
-stack=$(echo $res2 | cut -d ' ' -f 15)
-bigheap=$(echo $res2 | cut -d ' ' -f 25)
+result="$(stress-ng --brk $nStressors --stack $nStressors --bigheap $nStressors --metrics-brief --timeout 60s 2>&1)"
+subresult="${result#*] brk }"
+brk=$(echo $subresult | cut -d ' ' -f 5)
+stack=$(echo $subresult | cut -d ' ' -f 15)
+bigheap=$(echo $subresult | cut -d ' ' -f 25)
 echo $INSTANCE,$brk,$stack,$bigheap >> $RESULTS_FILE_NAME
 
 echo "pushing the result to github"
