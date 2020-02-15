@@ -3,7 +3,7 @@
 
 INSTANCE=$1
 nStressors=$2
-RESULTS_FILE_NAME="./results/stress-ng_test_results_$INSTANCE.csv"
+RESULTS_FILE_NAME="stress-ng_test_results_$INSTANCE.csv"
 
 if [[ "$INSTANCE" == "" || "$nStressors" == "" ]]; then
   echo "First parameter is The instance name and second parameter is The number of stressors"
