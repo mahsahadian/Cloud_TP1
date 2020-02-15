@@ -7,7 +7,8 @@ def readCPU(option, output_path, fileName):
     file.close()
 
 def readIO(bs, count, output_path, fileName):
-    command = "dd if=/dev/zero of=sb-io-test bs=" + str(bs) + " count=" + str(c$
+    command = "dd if=/dev/zero of=sb-io-test bs=" + str(bs) + " count="
+     + str(count)+" run"
     path = output_path + "/" + fileName + ".txt"
     file = open(path, 'a')
     subprocess.call(command, shell=True, stderr=file)
